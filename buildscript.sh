@@ -559,7 +559,7 @@ android/abi_gki_aarch64_zebra
     [[ -d "$OUT_DIR" ]] && make -j"$JOBS" -C "$SRC_DIR" O="$OUT_DIR" clean 2>&1 | sed 's/^/       /'
 
     log_step "make defconfig + fragment..."
-    make -j"$JOBS" -C "$SRC_DIR" O="$OUT_DIR" "$DEFCONF" "$FRAG" 2>&1 | sed 's/^/       /'
+    make -j"$JOBS" -C "$SRC_DIR" O="$OUT_DIR" "$DEFCONF" "$FRAG" susfs.config 2>&1 | sed 's/^/       /'
 
     # ── Dynamic .config patching (KernelSU Kconfig symbols) ──────
     # Runs AFTER defconfig so we never modify the defconfig file.
